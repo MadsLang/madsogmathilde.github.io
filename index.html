@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathilde & Mads</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">
+                    <h1>Mathilde & Mads</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">Forside</a></li>
+                    <li><a href="gaveoensker.html">Gaveønsker</a></li>
+                    <li><a href="praktisk.html">Praktisk Info</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="carousel-section">
+            <div class="carousel-container">
+                <div class="carousel-slides">
+                    <div class="slide slide1">
+                        <img src="images/hike.jpg" alt="Mathilde & Mads forlovelse">
+                    </div>
+                    <div class="slide slide2">
+                        <img src="images/alsace.JPG" alt="Mathilde & Mads - Billede 2">
+                    </div>
+                    <div class="slide slide3">
+                        <img src="images/forlovelse3.jpg" alt="Mathilde & Mads - Billede 3">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="countdown-section">
+            <div class="container">
+                <div class="countdown-header">
+                    <h2>Vi skal giftes!</h2>
+                    <p class="wedding-date">13. juni 2026</p>
+                    <p class="wedding-location">Københavns kanal & Restaurant Kanalen</p>
+                </div>
+                <div class="countdown">
+                    <div class="countdown-timer">
+                        <div class="countdown-item">
+                            <span id="days">0</span>
+                            <label>Dage</label>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="hours">0</span>
+                            <label>Timer</label>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="minutes">0</span>
+                            <label>Minutter</label>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="seconds">0</span>
+                            <label>Sekunder</label>
+                        </div>
+                    </div>
+                    <p class="countdown-text">Vi glæder os til at fejre denne særlige dag sammen med jer!</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="welcome">
+            <div class="container">
+                <h3>Velkommen til vores bryllupsside</h3>
+                <p>
+                    Kære familie og venner,<br><br>
+                    Vi er så glade for at kunne dele denne særlige dag med jer! På denne side kan I finde 
+                    alle de praktiske oplysninger I har brug for til vores bryllup, samt vores gaveønsker.
+                </p>
+                <p>
+                    Vi glæder os enormt til at fejre kærligheden sammen med jer alle, og vi håber, 
+                    at I vil være en del af vores store dag.
+
+                    <br><br>Med kærlig hilsen,<br>
+                </p>
+                <p class="signature">
+                    Mathilde & Mads
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mathilde & Mads</p>
+        </div>
+    </footer>
+
+    <script>
+        // Wedding countdown timer
+        function updateCountdown() {
+            const weddingDate = new Date('2025-06-13T15:00:00').getTime();
+            const now = new Date().getTime();
+            const timeLeft = weddingDate - now;
+
+            if (timeLeft > 0) {
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = days;
+                document.getElementById('hours').textContent = hours;
+                document.getElementById('minutes').textContent = minutes;
+                document.getElementById('seconds').textContent = seconds;
+            } else {
+                // Wedding day has arrived!
+                document.querySelector('.countdown-timer').innerHTML = '<div class="wedding-day"><h3>I dag er dagen!</h3></div>';
+            }
+        }
+
+        // Update countdown every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>

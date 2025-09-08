@@ -1,0 +1,846 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Color Palette - Pink to Purple Gradient */
+    --primary-light: #FFDFD6;     /* Priority 1: Soft peachy pink */
+    --secondary-pink: #E3A5C7;    /* Priority 2: Medium pink */
+    --tertiary-purple: #B692C2;   /* Priority 3: Light purple */
+    --accent-dark: #694F8E;       /* Priority 4: Dark purple */
+    
+    /* Additional supporting colors */
+    --primary-bg: #FFDFD6;
+    --secondary-bg: #F8F0ED;
+    --card-bg: #FFFFFF;
+    --text-dark: #2D1B3D;         /* Dark purple-based text */
+    --text-medium: #5A4B6B;       /* Medium purple-gray text */
+    --text-light: #8B7B95;        /* Light purple-gray text */
+    --white: #FFFFFF;
+    --shadow: rgba(105, 79, 142, 0.15);
+    
+    /* Fonts */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Lato', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--primary-bg);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--text-dark);
+}
+
+h2 {
+    font-size: 2.2rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+h4 {
+    font-size: 1.3rem;
+    color: var(--text-medium);
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: var(--text-medium);
+}
+
+/* Header and Navigation */
+header {
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 10px var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    color: var(--secondary-pink);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--text-medium);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    background-color: var(--tertiary-purple);
+    color: var(--white);
+}
+
+/* Image Carousel Section */
+.carousel-section {
+    width: 100%;
+    height: 40vh;
+    min-height: 300px;
+    max-height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-slides {
+    width: 300%;
+    height: 100%;
+    display: flex;
+    animation: carousel 9s infinite;
+}
+
+.slide {
+    width: 33.333%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+@keyframes carousel {
+    0%, 30% {
+        transform: translateX(0);
+    }
+    33.33%, 63.33% {
+        transform: translateX(-33.333%);
+    }
+    66.66%, 96.66% {
+        transform: translateX(-66.666%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.countdown-item label {
+    font-size: 0.9rem;
+    color: var(--text-medium);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.countdown-text {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--white);
+    text-align: center;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.wedding-day {
+    text-align: center;
+    background: var(--white);
+    color: linear-gradient(135deg, var(--secondary-pink) 0%, var(--tertiary-purple) 100%);
+    padding: 2rem;
+    border-radius: 20px;
+}
+
+.wedding-day h3 {
+    color: linear-gradient(135deg, var(--secondary-pink) 0%, var(--tertiary-purple) 100%);
+    font-size: 2rem;
+    margin: 0;
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.engagement-photo {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.engagement-photo:hover {
+    transform: scale(1.05);
+}
+
+/* Countdown Section */
+.countdown-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, var(--secondary-pink) 0%, var(--tertiary-purple) 100%);
+    width: 100%;
+}
+
+.countdown-section .countdown {
+    text-align: center;
+}
+
+.countdown-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.countdown-header h2 {
+    font-size: 3.5rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.wedding-date {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--primary-light);
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.wedding-location {
+    font-size: 1.3rem;
+    color: var(--white);
+    margin-bottom: 0;
+    opacity: 0.9;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Welcome Section */
+.welcome {
+    padding: 4rem 0;
+    background-color: var(--card-bg);
+}
+
+.welcome h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+}
+
+.welcome p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 1.5rem;
+    text-align: center;
+}
+
+.signature {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--secondary-pink);
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Timeline Section */
+.timeline {
+    padding: 4rem 0;
+    background-color: var(--secondary-bg);
+}
+
+.timeline h3 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.timeline-items {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 2rem;
+    align-items: center;
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--shadow);
+}
+
+.time {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--white);
+    text-align: center;
+    background-color: var(--tertiary-purple);
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+
+.event h4 {
+    margin-bottom: 0.3rem;
+}
+
+/* Page Header */
+.page-header {
+    background: linear-gradient(135deg, var(--secondary-pink) 0%, var(--tertiary-purple) 100%);
+    color: var(--white);
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.page-header h2 {
+    color: var(--white);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.page-header p {
+    color: var(--white);
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Gift Pages Styling */
+.gift-intro,
+.gift-lists,
+.gift-suggestions,
+.money-gift,
+.gift-thanks {
+    padding: 3rem 0;
+}
+
+.gift-intro {
+    background-color: var(--card-bg);
+}
+
+.gift-message {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.gift-stores {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.store-card {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--shadow);
+    text-align: center;
+}
+
+.store-card h4 {
+    color: var(--secondary-pink);
+    margin-bottom: 1rem;
+}
+
+.store-info {
+    margin-top: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--secondary-pink) 0%, var(--tertiary-purple) 100%);
+    color: var(--white);
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(227, 165, 199, 0.4);
+}
+
+.gift-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.category {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--shadow);
+}
+
+.category h4 {
+    color: var(--secondary-pink);
+    border-bottom: 2px solid var(--primary-light);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.category li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--secondary-bg);
+    color: var(--text-medium);
+}
+
+.category li:last-child {
+    border-bottom: none;
+}
+
+.money-gift {
+    background-color: var(--primary-light);
+}
+
+.money-gift-info {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.bank-info {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+    box-shadow: 0 5px 15px var(--shadow);
+    text-align: center;
+}
+
+.bank-info img {
+    max-width: 100%;
+    height: auto;
+    max-height: 500px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px var(--shadow);
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.bank-info img:hover {
+    transform: scale(1.02);
+}
+
+.thanks-message {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: var(--card-bg);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px var(--shadow);
+}
+
+/* Practical Info Styling */
+.practical-info {
+    padding: 3rem 0;
+    background-color: var(--primary-bg);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.info-card {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--shadow);
+}
+
+.info-card h3 {
+    color: var(--secondary-pink);
+    border-bottom: 3px solid var(--primary-light);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.location {
+    margin-bottom: 1.5rem;
+}
+
+.location h4 {
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.hotel,
+.contact-person {
+    background-color: var(--secondary-bg);
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 10px;
+}
+
+.rsvp {
+    background-color: var(--accent-dark);
+    color: var(--white);
+    padding: 3rem 0;
+}
+
+.rsvp-info {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.rsvp h3,
+.rsvp p {
+    color: var(--white);
+}
+
+.rsvp-deadline {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 1.5rem;
+}
+
+.rsvp-deadline p {
+    margin-bottom: 0;
+}
+
+.rsvp-deadline a {
+    text-decoration: none;
+}
+
+.weather-note {
+    background-color: var(--primary-light);
+    padding: 3rem 0;
+}
+
+.weather-info {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.weather-widget-container {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+    box-shadow: 0 5px 15px var(--shadow);
+}
+
+.weather-widget-container h4 {
+    color: var(--secondary-pink);
+    margin-bottom: 1.5rem;
+}
+
+.weather-widget-container iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px var(--shadow);
+    background-color: var(--white);
+}
+
+.weather-display {
+    text-align: left;
+}
+
+.weather-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-pink) 50%);
+    border-radius: 10px;
+}
+
+.weather-icon {
+    font-size: 3rem;
+}
+
+.weather-temp {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    font-family: var(--font-heading);
+}
+
+.weather-desc {
+    font-size: 1.1rem;
+    color: var(--text-medium);
+    font-weight: 500;
+}
+
+.weather-extended {
+    text-align: center;
+}
+
+.weather-extended ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.weather-extended li {
+    background-color: var(--secondary-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    color: var(--text-medium);
+}
+
+.weather-note {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-top: 1rem;
+}
+
+.weather-disclaimer {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+.weather-loading {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-medium);
+    font-style: italic;
+}
+
+.weather-error {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-medium);
+    background-color: var(--secondary-bg);
+    border-radius: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--accent-dark);
+    color: var(--white);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+footer p {
+    color: var(--white);
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .carousel-section {
+        height: 35vh;
+        min-height: 250px;
+        max-height: 300px;
+    }
+    
+    .countdown-header h2 {
+        font-size: 2.8rem;
+    }
+    
+    .wedding-date {
+        font-size: 1.5rem;
+    }
+    
+    .wedding-location {
+        font-size: 1.1rem;
+    }
+    
+    .countdown-header {
+        margin-bottom: 2.5rem;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .timeline-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gift-stores,
+    .gift-categories {
+        grid-template-columns: 1fr;
+    }
+    
+    .engagement-photo {
+        width: 280px;
+        height: 280px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    .countdown-section {
+        padding: 3rem 0;
+    }
+    
+    .countdown-timer {
+        gap: 1rem;
+    }
+    
+    .countdown-item {
+        padding: 1rem 0.5rem;
+        min-width: 60px;
+    }
+    
+    .countdown-section {
+        padding: 2rem 0;
+    }
+    
+    .countdown-item span {
+        font-size: 1.5rem;
+    }
+    
+    .countdown-text {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .weather-item {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .weather-extended ul {
+        grid-template-columns: 1fr;
+    }
+    
+    .weather-widget-container iframe {
+        height: 350px;
+    }
+    
+    .bank-info img {
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-section {
+        height: 30vh;
+        min-height: 200px;
+        max-height: 250px;
+    }
+    
+    .countdown-header h2 {
+        font-size: 2.2rem;
+    }
+    
+    .wedding-date {
+        font-size: 1.2rem;
+    }
+    
+    .wedding-location {
+        font-size: 1rem;
+    }
+    
+    .countdown-header {
+        margin-bottom: 2rem;
+    }
+    
+    .nav-menu {
+        gap: 1rem;
+    }
+    
+    .nav-menu a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .weather-widget-container iframe {
+        height: 300px;
+    }
+    
+    .bank-info img {
+        max-height: 300px;
+    }
+}
