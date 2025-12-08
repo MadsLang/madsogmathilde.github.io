@@ -43,11 +43,26 @@
         <section class="countdown-section">
             <div class="container">
                 <div class="countdown-header">
-                    <h2>Vi skal giftes!</h2>
+                    <h2>Mads og Mathildes bryllup</h2>
                     <p class="wedding-date">13. juni 2026</p>
-                    <p class="wedding-location">Københavns kanal & Restaurant Kanalen</p>
+                    <p class="wedding-location">Bibliotekshaven & Restaurant Kanalen</p>
                 </div>
+            </div>
+        </section>
+
+        <section class="welcome">
+            <div class="container">
+                <h3>Velkommen til vores bryllupsside</h3>
+                <p>
+                    På denne side kan I finde alt, der er værd at vide om vores bryllup - praktisk oplysninger, parkering, hotelanbefalinger, ønskeliste med mere.
+                </p>
+            </div>
+        </section>
+
+        <section class="countdown-section">
+            <div class="container">
                 <div class="countdown">
+                    <p class="countdown-text">Vi glæder os til at se jer om: </p>
                     <div class="countdown-timer">
                         <div class="countdown-item">
                             <span id="days">0</span>
@@ -66,28 +81,7 @@
                             <label>Sekunder</label>
                         </div>
                     </div>
-                    <p class="countdown-text">Vi glæder os til at fejre denne særlige dag sammen med jer!</p>
                 </div>
-            </div>
-        </section>
-
-        <section class="welcome">
-            <div class="container">
-                <h3>Velkommen til vores bryllupsside</h3>
-                <p>
-                    Kære familie og venner,<br><br>
-                    Vi er så glade for at kunne dele denne særlige dag med jer! På denne side kan I finde 
-                    alle de praktiske oplysninger I har brug for til vores bryllup, samt vores gaveønsker.
-                </p>
-                <p>
-                    Vi glæder os enormt til at fejre kærligheden sammen med jer alle, og vi håber, 
-                    at I vil være en del af vores store dag.
-
-                    <br><br>Med kærlig hilsen,<br>
-                </p>
-                <p class="signature">
-                    Mathilde & Mads
-                </p>
             </div>
         </section>
     </main>
@@ -101,7 +95,7 @@
     <script>
         // Wedding countdown timer
         function updateCountdown() {
-            const weddingDate = new Date('2025-06-13T15:00:00').getTime();
+            const weddingDate = new Date('2026-06-13T15:00:00').getTime();
             const now = new Date().getTime();
             const timeLeft = weddingDate - now;
 
